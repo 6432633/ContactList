@@ -1,9 +1,11 @@
 package ContactList;
 
+import jdk.jshell.spi.ExecutionControl;
+
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionControl.NotImplementedException {
      ContactManager manager = new ContactManager();
         Scanner scanner = new Scanner(System.in);
         boolean running = true;

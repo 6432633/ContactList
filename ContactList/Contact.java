@@ -1,5 +1,8 @@
 package ContactList;
 
+import jdk.jshell.spi.ExecutionControl;
+
+//TODO: set the class as public
 class Contact {
     private static long idCounter = 1;
    private String lastName;
@@ -8,9 +11,12 @@ class Contact {
    private String number;
    private Long id;
 
-  public  Contact (String lastName, String firstName, String email, String number){
+  public  Contact (String lastName, String firstName, String email, String number) throws ExecutionControl.NotImplementedException {
         this.id = idCounter++;
-        this.lastName = lastName;
+        if(Validators.isNameValid(lastName)) {
+            this.lastName = lastName;
+        } else throw  new RuntimeException("Invalid lastname");
+
         this.firstName = firstName;
         this.email = email;
         this.number = number;
