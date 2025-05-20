@@ -2,15 +2,15 @@ package ContactList;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//TODO: make the class public
 class ContactManager {
-    private List<Contact> contacts;
+    private final List<Contact> contacts = new ArrayList<>();
     public ContactManager(){
-        contacts = new ArrayList<>();
     }
 
 
     public void addContact(Contact contact){
+        //TODO check if contact already exist
       contacts.add(contact);
         System.out.println("Contact Added: " + contact);
     }
@@ -23,7 +23,9 @@ class ContactManager {
           }
       }
     }
+    //TODO: return a list of contacts
     public Contact searchByName(String name){
+        //TODO: make it void
       for (Contact c : contacts){
           if(c.getFirstName().equalsIgnoreCase(name)) {
 
@@ -34,6 +36,7 @@ class ContactManager {
     }
 
     public boolean deleteContact(Long id){
+        //TODO: make it void
         for(int i = 0; i< contacts.size(); i++){
             if(contacts.get(i).getId().equals(id)){
                 Contact remover = contacts.remove(i);
@@ -45,6 +48,7 @@ class ContactManager {
         return false;
     }
     public boolean updateContact(Long id, Contact updateContact){
+        //TODO: make it void
         for (int i = 0; i< contacts.size(); i++){
             if (contacts.get(i).getId().equals(id)){
                 contacts.set(i, updateContact);
