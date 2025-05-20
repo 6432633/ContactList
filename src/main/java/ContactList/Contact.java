@@ -1,4 +1,4 @@
-package ContactList;
+package src.main.java.ContactList;
 
 import jdk.jshell.spi.ExecutionControl;
 
