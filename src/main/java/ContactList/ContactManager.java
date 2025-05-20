@@ -1,4 +1,4 @@
-package ContactList;
+package src.main.java.ContactList;
 
 import java.util.ArrayList;
 import java.util.List;
