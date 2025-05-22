@@ -1,25 +1,31 @@
-package src.main.java.ContactList;
+package ContactList;
 
-import jdk.jshell.spi.ExecutionControl;
 
-//TODO: set the class as public
-class Contact {
-    private static long idCounter = 1;
+//TODO: set the class as public-> Executed
+   public class Contact {
+       private static long idCounter = 1;
    private String lastName;
    private String firstName;
    private String email;
    private String number;
    private Long id;
 
-  public  Contact (String lastName, String firstName, String email, String number) throws ExecutionControl.NotImplementedException {
+  public  Contact (String lastName, String firstName, String email, String number){
         this.id = idCounter++;
         if(Validators.isNameValid(lastName)) {
             this.lastName = lastName;
         } else throw  new RuntimeException("Invalid lastname");
 
-        this.firstName = firstName;
-        this.email = email;
-        this.number = number;
+         if(Validators.isNameValid(firstName)) {
+             this.firstName = firstName;
+         }else throw new RuntimeException("Invalid firstname.");
+
+        if (Validators.isEmailValid(email)) {
+            this.email = email;
+        }else throw new RuntimeException("Invalid Email");
+        if(Validators.isNumberValid(number)) {
+            this.number = number;
+        }else throw new RuntimeException("Invalid Number");
 
     }
     public Contact(Long id, String lastName, String firstName, String email, String number ){

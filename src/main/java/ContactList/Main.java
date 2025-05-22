@@ -1,12 +1,11 @@
-package src.main.java.ContactList;
+package ContactList;
 
-import jdk.jshell.spi.ExecutionControl;
 
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws ExecutionControl.NotImplementedException {
-     ContactManager manager = new ContactManager();
+    public static void main(String[] args) {
+        ContactManager manager = new ContactList.ContactManager();
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
@@ -17,7 +16,8 @@ public class Main {
             System.out.println("3. Search contact by first name");
             System.out.println("4. Delete contact by ID");
             System.out.println("5. Update contact by ID");
-            System.out.println("6. Exit");
+            System.out.println("6. Contact numbers");
+            System.out.println("7. Exit");
             System.out.println("Choose an option");
 
             int option = scanner.nextInt();
@@ -77,6 +77,9 @@ public class Main {
                     manager.updateContact(idToUpdate,update);
                     break;
                 case 6:
+                    System.out.println("Total contacts: " + manager.countContacts());
+                    break;
+                case 7:
                     running = false;
                     System.out.println("Exiting....");
                     break;
